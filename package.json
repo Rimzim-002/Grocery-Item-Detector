@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "cd backend && npm run start:prod",
-    "build": "npm run backend:build",
+    "build": "cd backend && npm ci --legacy-peer-deps && npm run build",
     "dev": "./scripts/start-dev.sh",
     "stop": "./scripts/stop-dev.sh",
     "backend:install": "cd backend && npm ci --legacy-peer-deps",
@@ -28,11 +28,9 @@
     "backend:test": "cd backend && npm test",
     "frontend:dev": "cd frontend && python3 -m http.server 8000",
     "install:all": "npm run backend:install",
-    "clean": "rm -rf backend/dist backend/node_modules ./*.pid",
+    "clean": "rm -rf backend/dist ./*.pid",
     "health": "curl -s http://localhost:${PORT:-3001}/health || echo 'Backend not running'",
-    "docs": "echo 'Documentation available in docs/ folder'",
-    "prebuild": "npm run clean",
-    "postbuild": "echo 'Build completed successfully'"
+    "docs": "echo 'Documentation available in docs/ folder'"
   },
   "workspaces": [
     "backend"
