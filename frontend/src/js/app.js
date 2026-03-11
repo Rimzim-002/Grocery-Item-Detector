@@ -2,10 +2,10 @@
 // GroceryScan — Frontend Logic
 // ==============================
 
-// Dynamic API URL - works for both localhost and mobile access
+// Dynamic API URL - works for both localhost and deployed backend
 const API_URL = window.location.hostname === 'localhost' 
     ? 'http://localhost:3001' 
-    : `http://${window.location.hostname}:3001`;
+    : 'https://grocery-item-detector-1.onrender.com';
 const DETECT_INTERVAL_MS = 800; // Detection every 0.8s - faster for better responsiveness
 
 // DOM Elements
@@ -79,7 +79,7 @@ function isMobileDevice() {
 // ======== Connection check ========
 async function checkConnection() {
     try {
-        const resp = await fetch(`${API_URL}/health`);
+        const resp = await fetch(`${API_URL}/api/health`);
         const data = await resp.json();
         if (data.status === 'ok') {
             statusDot.className = 'status-dot connected';
@@ -253,7 +253,7 @@ async function captureAndDetect() {
     const startTime = performance.now();
 
     try {
-        const resp = await fetch(`${API_URL}/detect`, {
+        const resp = await fetch(`${API_URL}/api/detect`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ image: base64 }),

@@ -5,7 +5,7 @@ class DetectDto {
   image: string; // base64 encoded image
 }
 
-@Controller()
+@Controller('api')
 export class DetectionController {
   constructor(private readonly detectionService: DetectionService) {}
 
