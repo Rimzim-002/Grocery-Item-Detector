@@ -1,3 +1,4 @@
+
 export class Logger {
   private static formatTimestamp(): string {
     return new Date().toISOString();

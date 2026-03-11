@@ -18,6 +18,7 @@
     "npm": ">=8.0.0"
   },
   "scripts": {
+    "start": "cd backend && npm run start:prod",
     "dev": "./scripts/start-dev.sh",
     "stop": "./scripts/stop-dev.sh",
     "build": "./scripts/build-prod.sh",
