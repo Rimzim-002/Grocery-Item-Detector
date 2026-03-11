@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "cd backend && npm run start:prod",
-    "build": "cd backend && npm ci --legacy-peer-deps && npm run build",
+    "build": "cd backend && npm install --legacy-peer-deps && npm run build",
     "dev": "./scripts/start-dev.sh",
     "stop": "./scripts/stop-dev.sh",
     "backend:install": "cd backend && npm ci --legacy-peer-deps",
