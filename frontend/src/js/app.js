@@ -2,10 +2,8 @@
 // GroceryScan — Frontend Logic
 // ==============================
 
-// Dynamic API URL - works for both localhost and deployed backend
-const API_URL = window.location.hostname === 'localhost' 
-    ? 'http://localhost:3001' 
-    : 'https://grocery-item-detector-1.onrender.com';
+// Always use deployed backend
+const API_URL = 'https://grocery-item-detector-1.onrender.com';
 const DETECT_INTERVAL_MS = 800; // Detection every 0.8s - faster for better responsiveness
 
 // DOM Elements
