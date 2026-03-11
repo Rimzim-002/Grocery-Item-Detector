@@ -1,0 +1,39 @@
+{
+  "name": "grocery-item-detection",
+  "version": "1.0.0",
+  "description": "AI-powered real-time object detection system for grocery and office items",
+  "keywords": ["ai", "object-detection", "tensorflow", "nestjs", "webcam", "grocery"],
+  "author": "Rimzim",
+  "license": "MIT",
+  "homepage": "https://github.com/Rimzim-002/Grocery-Item-Detector#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rimzim-002/Grocery-Item-Detector.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Rimzim-002/Grocery-Item-Detector/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "scripts": {
+    "dev": "./scripts/start-dev.sh",
+    "stop": "./scripts/stop-dev.sh",
+    "build": "./scripts/build-prod.sh",
+    "backend:install": "cd backend && npm install",
+    "backend:dev": "cd backend && npm run start:dev",
+    "backend:build": "cd backend && npm run build",
+    "backend:test": "cd backend && npm test",
+    "frontend:dev": "cd frontend && python3 -m http.server 8000",
+    "install:all": "npm run backend:install",
+    "clean": "rm -rf backend/dist backend/node_modules ./*.pid",
+    "health": "curl -s http://localhost:3001/health || echo 'Backend not running'",
+    "docs": "echo 'Documentation available in docs/ folder'"
+  },
+  "workspaces": [
+    "backend"
+  ],
+  "devDependencies": {},
+  "private": true
+}
